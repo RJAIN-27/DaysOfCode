@@ -33,3 +33,22 @@
                     return total_sum - min_sum
                 else:
                     return max_sum
+
+#### 328. Odd Even Linked List - https://leetcode.com/problems/odd-even-linked-list/
+        
+        def oddEvenList(self, head):
+                if  head == None:
+                    return head
+                odd=head
+                even=head.next
+                evenhead=even
+
+
+                while (even!=None and even.next!=None):
+                    odd.next=even.next
+                    odd=odd.next
+                    even.next=odd.next
+                    even=even.next
+
+                odd.next=evenhead
+                return head
