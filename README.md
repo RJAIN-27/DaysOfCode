@@ -200,7 +200,7 @@ This is nothing but a binary search problem.
                                 left = pivot_idx + 1
                 return False
                 
- #### 438. Find All Anagrams in a String - https://leetcode.com/problems/find-all-anagrams-in-a-string/
+ #### 10-438. Find All Anagrams in a String - https://leetcode.com/problems/find-all-anagrams-in-a-string/
  
          def findAnagrams(self, s, p):
                 parr=[0]*26
