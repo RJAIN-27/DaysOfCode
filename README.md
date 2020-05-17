@@ -199,3 +199,23 @@ This is nothing but a binary search problem.
                             else:
                                 left = pivot_idx + 1
                 return False
+                
+ #### 438. Find All Anagrams in a String - https://leetcode.com/problems/find-all-anagrams-in-a-string/
+ 
+         def findAnagrams(self, s, p):
+                parr=[0]*26
+                sarr=[0]*26
+                lp=len(p)
+                ls=len(s)
+                for i in p:
+                    parr[ord(i)-ord('a')]=parr[ord(i)-ord('a')]+1
+
+                ans=[]
+
+                for i in range(ls):
+                    sarr[ord(s[i])-ord('a')]=sarr[ord(s[i])-ord('a')]+1
+                    if i>=lp:
+                        sarr[ord(s[i-lp])-ord('a')]=sarr[ord(s[i-lp])-ord('a')]-1
+                    if sarr==parr:
+                        ans.append(i-lp+1)
+                return ans
