@@ -110,11 +110,9 @@ This problem is a typical implementation of Breadth First Search and I really li
  K=4
  
  The below image exactly explains what is to be done:
- 
- 
- 
- 
-        def removeKdigits(self, num, k):
+
+ ![] https://github.com/RJAIN-27/DaysOfCode/blob/master/402_algorithm.png
+         def removeKdigits(self, num, k):
         s=[]
         fs=[]
         for i in num:
