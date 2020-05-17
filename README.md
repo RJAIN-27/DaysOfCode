@@ -76,6 +76,30 @@
  
 This problem is a typical implementation of Breadth First Search and I really liked the fact how it cannot be done using the Depth First Search Algorithm. We are using the breadth first search because we want to find out the minimum number of transformations to change the begin word in to the end word. In case we just needed to check if the word can be transformed using any number of transformations, we could have done it using the Depth First Search Algorithm.
  
- 
- 
- 
+        def ladderLength(self, beginWord, endWord, wordList):
+                if endWord not in wordList:
+                     return 0
+                L=len(beginWord)
+                neighbor_dict=defaultdict(list)
+                
+                for word in wordList:
+                        for i in range(L):
+                                neighbor_dict[word[:i]+"*"+word[i+1:]].append(word)
+                                
+                queue=[]
+                visited={beginWord: True}
+                queue.append((beginWord, 1))
+                
+                 while queue:
+                        current_word, level = queue.pop() 
+                        for i in range(L):
+                                intermediate_word = current_word[:i] + "*" + current_word[i+1:]
+                                
+                                for word in neighbor_dict[intermediate_word]:
+                                        if word == endWord:
+                                                return level + 1
+                                        if word not in visited:
+                                                visited[word] = True
+                                                queue.append((word, level + 1))
+                 return 0
+                 
