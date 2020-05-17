@@ -74,4 +74,8 @@
       
  #### 127. Word Ladder - https://leetcode.com/problems/word-ladder/
  
+        This problem is a typical implementation of Breadth First Search and I really liked the fact how it cannot be done using the Depth First Search Algorithm. We are using the breadth first search because we want to find out the minimum number of transformations to change the begin word in to the end word. In case we just needed to check if the word can be transformed using any number of transformations, we could have done it using the Depth First Search Algorithm.
+ 
+ 
+ 
  
