@@ -77,30 +77,30 @@
 This problem is a typical implementation of Breadth First Search and I really liked the fact how it cannot be done using the Depth First Search Algorithm. We are using the breadth first search because we want to find out the minimum number of transformations to change the begin word in to the end word. In case we just needed to check if the word can be transformed using any number of transformations, we could have done it using the Depth First Search Algorithm.
  
         def ladderLength(self, beginWord, endWord, wordList):
-        if endWord not in wordList:
-            return 0
-        L=len(beginWord)
-        neighbor_dict=defaultdict(list)
+                if endWord not in wordList:
+                    return 0
+                L=len(beginWord)
+                neighbor_dict=defaultdict(list)
 
-        for word in wordList:
-            for i in range(L):
-                neighbor_dict[word[:i] + "*" + word[i+1:]].append(word)
+                for word in wordList:
+                    for i in range(L):
+                        neighbor_dict[word[:i] + "*" + word[i+1:]].append(word)
 
-        queue=[]
-        visited={beginWord: True}
-        queue.append((beginWord, 1))
+                queue=[]
+                visited={beginWord: True}
+                queue.append((beginWord, 1))
 
-        while queue:           
-            current_word, level = queue.pop(0) 
-            for i in range(L):
-                intermediate_word = current_word[:i] + "*" + current_word[i+1:]
-                for word1 in neighbor_dict[intermediate_word]:     
-                    if word1 == endWord:
-                        return level + 1
-                    if word1 not in visited:
-                        visited[word1] = True
-                        queue.append((word1, level + 1))
-        return 0
+                while queue:           
+                    current_word, level = queue.pop(0) 
+                    for i in range(L):
+                        intermediate_word = current_word[:i] + "*" + current_word[i+1:]
+                        for word1 in neighbor_dict[intermediate_word]:     
+                            if word1 == endWord:
+                                return level + 1
+                            if word1 not in visited:
+                                visited[word1] = True
+                                queue.append((word1, level + 1))
+                return 0
    
  #### 6-Remove K Digits - https://leetcode.com/problems/remove-k-digits/
  
@@ -114,39 +114,39 @@ This problem is a typical implementation of Breadth First Search and I really li
  ![](https://github.com/RJAIN-27/DaysOfCode/blob/master/402_algorithm.png)
  
         def removeKdigits(self, num, k):
-        s=[]
-        fs=[]
-        for i in num:
-            while k>0 and s and s[-1]>i:
-                s.pop()
-                k=k-1
-            s.append(i)
+                s=[]
+                fs=[]
+                for i in num:
+                    while k>0 and s and s[-1]>i:
+                        s.pop()
+                        k=k-1
+                    s.append(i)
 
-        if k > 0:
-            fs=s[:-k]
-        else:
-            fs=s
+                if k > 0:
+                    fs=s[:-k]
+                else:
+                    fs=s
 
-        if  ("".join(fs).lstrip("0"))=="":
-            return "0"
-        else:
-            return ("".join(fs).lstrip("0"))
+                if  ("".join(fs).lstrip("0"))=="":
+                    return "0"
+                else:
+                    return ("".join(fs).lstrip("0"))
             
 #### 7-11. Container With Most Water - https://leetcode.com/problems/container-with-most-water/
 
 The main part of intution for the question lies in the fact that when l=0 and r=len(height)-1 we can say that area can be maximum due to the largest width, but now the area can be increased further by considering bigger walls.
 
         def maxArea(self, height):
-        max_area=0
-        area=0
-        l=0
-        r=len(height)-1
-        while l < r:
-            area=(r-l)*min(height[r],height[l])
-            max_area=max(area,max_area)
-            
-            if height[l]<=height[r]:
-                l=l+1
-            else:
-                r=r-1
-        return max_area
+                max_area=0
+                area=0
+                l=0
+                r=len(height)-1
+                while l < r:
+                    area=(r-l)*min(height[r],height[l])
+                    max_area=max(area,max_area)
+
+                    if height[l]<=height[r]:
+                        l=l+1
+                    else:
+                        r=r-1
+                return max_area
