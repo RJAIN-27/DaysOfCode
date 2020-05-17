@@ -1,6 +1,6 @@
 # DaysOfCode
 
-#### 53. Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
+#### 1-53. Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
 
         def maxSubArray(self, nums):
                 n=len(nums)
@@ -12,7 +12,7 @@
                     global_sum=max(global_sum,local_sum)
                 return global_sum 
 
-#### 918. Maximum Sum Circular Subarray - https://leetcode.com/problems/maximum-sum-circular-subarray/
+#### 2-918. Maximum Sum Circular Subarray - https://leetcode.com/problems/maximum-sum-circular-subarray/
 
         def maxSubarraySumCircular(self, A):
                 sub_max = A[0]    
@@ -34,7 +34,7 @@
                 else:
                     return max_sum
 
-#### 328. Odd Even Linked List - https://leetcode.com/problems/odd-even-linked-list/
+#### 3-328. Odd Even Linked List - https://leetcode.com/problems/odd-even-linked-list/
         
         def oddEvenList(self, head):
                 if  head == None:
@@ -53,7 +53,7 @@
                 odd.next=evenhead
                 return head
                 
- #### 62. Unique Paths - https://leetcode.com/problems/unique-paths/
+ #### 4-62. Unique Paths - https://leetcode.com/problems/unique-paths/
  
         def uniquePaths(self, m, n):
                 d=[[0 for i in range(m)] for j in range(n)]
@@ -72,7 +72,7 @@
                 
       # In this problem n is the number of rows and m is the number of columns
       
- #### 127. Word Ladder - https://leetcode.com/problems/word-ladder/
+ #### 5-127. Word Ladder - https://leetcode.com/problems/word-ladder/
  
 This problem is a typical implementation of Breadth First Search and I really liked the fact how it cannot be done using the Depth First Search Algorithm. We are using the breadth first search because we want to find out the minimum number of transformations to change the begin word in to the end word. In case we just needed to check if the word can be transformed using any number of transformations, we could have done it using the Depth First Search Algorithm.
  
@@ -102,7 +102,7 @@ This problem is a typical implementation of Breadth First Search and I really li
                         queue.append((word1, level + 1))
         return 0
    
- #### Remove K Digits - https://leetcode.com/problems/remove-k-digits/
+ #### 6-Remove K Digits - https://leetcode.com/problems/remove-k-digits/
  
  This is a really cool implementation of the Greedy approach. 
  
