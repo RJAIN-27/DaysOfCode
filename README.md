@@ -101,4 +101,34 @@ This problem is a typical implementation of Breadth First Search and I really li
                         visited[word1] = True
                         queue.append((word1, level + 1))
         return 0
-    
+   
+ #### Remove K Digits - https://leetcode.com/problems/remove-k-digits/
+ 
+ This is a really cool implementation of the Greedy approach. 
+ 
+ Let us say the number is - [1,2,3,4,5,2,6,4]
+ K=4
+ 
+ The below image exactly explains what is to be done:
+ 
+ 
+ 
+ 
+        def removeKdigits(self, num, k):
+        s=[]
+        fs=[]
+        for i in num:
+            while k>0 and s and s[-1]>i:
+                s.pop()
+                k=k-1
+            s.append(i)
+
+        if k > 0:
+            fs=s[:-k]
+        else:
+            fs=s
+
+        if  ("".join(fs).lstrip("0"))=="":
+            return "0"
+        else:
+            return ("".join(fs).lstrip("0"))
