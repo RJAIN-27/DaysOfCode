@@ -150,3 +150,52 @@ The main part of intution for the question lies in the fact that when l=0 and r=
                     else:
                         r=r-1
                 return max_area
+
+#### 8-240. Search a 2D Matrix II - https://leetcode.com/problems/search-a-2d-matrix-ii/
+The best part of this question is that we do not have to apply binary search at all to find the element (even though it is so much mentioned that the 2d array is sorted in a particular manner). I did not solve the question using binary search but, when I checked the solution I could observe that the complexity if I use binary search would be nlogn.
+
+However using the other approach I just have to keep moving up and down to find the element. The time complexity was O(m+n)
+
+The good thing to notice is that we cannot start the question from 2 corners. The only corners that would be good are - top right and lower left.
+
+        def searchMatrix(self, matrix, target):
+                if len(matrix) == 0:
+                    return False
+
+                rows=len(matrix)-1
+                columns=len(matrix[0])
+                col=0
+
+                while rows>=0 and col <= columns-1:
+                    if matrix[rows][col]>target:
+                        rows=rows-1
+                    elif matrix[rows][col]<target:
+                        col=col+1
+                    else:
+                        return True
+                return False
+
+
+#### 9-74. Search a 2D Matrix - https://leetcode.com/problems/search-a-2d-matrix/
+
+This is nothing but a binary search problem.
+
+        def searchMatrix(self, matrix, target):
+                m = len(matrix)
+                if m == 0:
+                    return False
+                n = len(matrix[0])
+
+                # binary search
+                left, right = 0, m * n - 1
+                while left <= right:
+                        pivot_idx = (left + right) / 2
+                        pivot_element = matrix[pivot_idx / n][pivot_idx % n]
+                        if target == pivot_element:
+                            return True
+                        else:
+                            if target < pivot_element:
+                                right = pivot_idx - 1
+                            else:
+                                left = pivot_idx + 1
+                return False
