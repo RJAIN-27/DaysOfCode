@@ -111,8 +111,9 @@ This problem is a typical implementation of Breadth First Search and I really li
  
  The below image exactly explains what is to be done:
 
- ![] https://github.com/RJAIN-27/DaysOfCode/blob/master/402_algorithm.png
-         def removeKdigits(self, num, k):
+ ![] (https://github.com/RJAIN-27/DaysOfCode/blob/master/402_algorithm.png)
+ 
+        def removeKdigits(self, num, k):
         s=[]
         fs=[]
         for i in num:
