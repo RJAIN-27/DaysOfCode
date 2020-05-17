@@ -131,3 +131,22 @@ This problem is a typical implementation of Breadth First Search and I really li
             return "0"
         else:
             return ("".join(fs).lstrip("0"))
+            
+#### 7-11. Container With Most Water - https://leetcode.com/problems/container-with-most-water/
+
+The main part of intution for the question lies in the fact that when l=0 and r=len(height)-1 we can say that area can be maximum due to the largest width, but now the area can be increased further by considering bigger walls.
+
+        def maxArea(self, height):
+        max_area=0
+        area=0
+        l=0
+        r=len(height)-1
+        while l < r:
+            area=(r-l)*min(height[r],height[l])
+            max_area=max(area,max_area)
+            
+            if height[l]<=height[r]:
+                l=l+1
+            else:
+                r=r-1
+        return max_area
