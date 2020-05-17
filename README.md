@@ -52,3 +52,26 @@
 
                 odd.next=evenhead
                 return head
+                
+ #### 62. Unique Paths - https://leetcode.com/problems/unique-paths/
+ 
+        def uniquePaths(self, m, n):
+                d=[[0 for i in range(m)] for j in range(n)]
+                
+                for i in range(m):
+                        d[0][i]=1
+                for i in range(n):
+                        d[i][0]=1
+                        
+                        
+                for i in range(n):
+                        for j in range(m):
+                                d[i][j]=d[i-1][j]+d[i][j-1]
+                
+                return d[n-1][m-1]
+                
+      # In this problem n is the number of rows and m is the number of columns
+      
+ #### 127. Word Ladder - https://leetcode.com/problems/word-ladder/
+ 
+ 
