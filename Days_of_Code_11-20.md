@@ -97,7 +97,27 @@ This problem is just a slight variation to the above level order traversal probl
               l=l+1
           return fans
 
+ #### 14 - 567. Permutation in String - https://leetcode.com/problems/permutation-in-string/
  
+ This is a very simple problem just like the anagram problem (10-438) that you had done.
  
+    def checkInclusion(self, s1, s2):
+           a=[0]*26
+           b=[0]*26
+
+           l1=len(s1)
+           l2=len(s2)
+
+           for i in s1:
+               a[ord(i)-ord('a')]=a[ord(i)-ord('a')]+1
+
+           for i in range(l2):
+               b[ord(s2[i])-ord('a')]=b[ord(s2[i])-ord('a')]+1
+               if i >= l1:
+                   b[ord(s2[i-l1])-ord('a')]=b[ord(s2[i-l1])-ord('a')]-1
+               if b==a:
+                   return True
+           return False
+            
  
  
