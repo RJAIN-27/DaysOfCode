@@ -167,6 +167,41 @@ Below is my code:
             return False
         return True
             
-  
-  
+ #### 210. Course Schedule II - https://leetcode.com/problems/course-schedule-ii/
  
+ This code I have improvised, the above code to make it better and return the topological sort.
+
+       def detect(self,i, s, d, ans):
+        s[i]=1
+        for j in d[i]:
+            if s[j] == 1:   
+                return True
+            elif s[j] == 0: 
+                if  self.detect(j, s, d, ans) == True:  
+                    return True
+        s[i]=2
+        ans.append(i)
+        return ans 
+        
+    def detect_cycle(self,d, numCourses, ans):
+        s=[0]*numCourses
+        for i in range(numCourses):
+            if s[i]==0:
+                x=self.detect(i, s, d, ans)
+                if x==True:
+                    return True
+        return x
+    
+    def findOrder(self, numCourses, prerequisites):
+        d=defaultdict(list)
+        for i in prerequisites:
+            nc=i[0]
+            pc=i[1]
+            d[pc].append(nc)
+            
+        ans=[]
+        ans=self.detect_cycle(d, numCourses, ans)
+        if ans == True:
+            return []
+        else:
+            return ans[::-1]
