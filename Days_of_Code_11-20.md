@@ -136,7 +136,37 @@ https://leetcode.com/problems/course-schedule/discuss/58606/Python-Solution-with
 
 Below is my code:
 
-
+     def detect(self,i, s, d):
+        s[i]=1
+        for j in d[i]:
+            if s[j] == 1:
+                return True
+            elif s[j] == 0: 
+                if self.detect(j, s, d):
+                    return True
+        s[i]=2
+        return False
+        
+    def detect_cycle(self,d, numCourses):
+        s=[0]*numCourses
+        for i in range(numCourses):
+            if s[i]==0:
+                if self.detect(i, s, d):
+                    return True
+        return False
+    
+    def canFinish(self, numCourses, prerequisites):
+        d=defaultdict(list)
+        
+        for i in prerequisites:
+            nc=i[0]
+            pc=i[1]
+            d[pc].append(nc)
+        
+        if self.detect_cycle(d, numCourses) ==True:
+            return False
+        return True
+            
   
   
  
