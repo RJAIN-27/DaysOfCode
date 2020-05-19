@@ -118,6 +118,25 @@ This problem is just a slight variation to the above level order traversal probl
                if b==a:
                    return True
            return False
-            
+           
  
+  #### 15 - 207. Course Schedule - https://leetcode.com/problems/course-schedule/
+  
+  This one of the best implementations of DFS problem that I have found.
+  
+  While doing this problem I realised that if I just have to do DFS, I will need only one array visited that can take care and help us not visit the node if its already visited.
+  
+  This is very simple and can be seen in the Geeks for Geeks link - https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/
+  
+  But while I want to detect if there is a cycle, I need a visited array that has 3 values, one that shows visited, not visited and visiting.
+  
+However, for detecting a cycle I checked the solution from leetcode, after making my code wrong several times.
+
+https://leetcode.com/problems/course-schedule/discuss/58606/Python-Solution-with-Detailed-Explanation
+
+Below is my code:
+
+
+  
+  
  
