@@ -167,7 +167,7 @@ Below is my code:
             return False
         return True
             
- #### 210. Course Schedule II - https://leetcode.com/problems/course-schedule-ii/
+ #### 16 - 210. Course Schedule II - https://leetcode.com/problems/course-schedule-ii/
  
  This code I have improvised, the above code to make it better and return the topological sort.
 
@@ -206,7 +206,7 @@ Below is my code:
         else:
             return ans[::-1]
 
- #### 901. Online Stock Span - https://leetcode.com/problems/online-stock-span/
+ #### 17 - 901. Online Stock Span - https://leetcode.com/problems/online-stock-span/
  
  This stack question is tricky and small stack question.
  
@@ -224,3 +224,9 @@ Below is my code:
                 a=a+y
             self.stack.append((price,a+1))
         return self.stack[-1][1]
+
+#### 18 - 739. Daily Temperatures - https://leetcode.com/problems/daily-temperatures/
+
+I never got a chance to understand the stack implementation of this question properly. Was always baffeled. But the video link: https://www.youtube.com/watch?v=WGm4Kj3lhRI worked wonders.
+
+
