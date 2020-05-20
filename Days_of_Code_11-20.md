@@ -205,3 +205,22 @@ Below is my code:
             return []
         else:
             return ans[::-1]
+
+ #### 901. Online Stock Span - https://leetcode.com/problems/online-stock-span/
+ 
+ This stack question is tricky and small stack question.
+ 
+    def __init__(self):
+        self.stack=[]        
+
+    def next(self, price):
+
+        if not self.stack:
+            self.stack.append((price,1))
+        else:
+            a=0
+            while self.stack and self.stack[-1][0]<=price:
+                x,y=self.stack.pop()
+                a=a+y
+            self.stack.append((price,a+1))
+        return self.stack[-1][1]
