@@ -229,4 +229,13 @@ Below is my code:
 
 I never got a chance to understand the stack implementation of this question properly. Was always baffeled. But the video link: https://www.youtube.com/watch?v=WGm4Kj3lhRI worked wonders.
 
-
+        def dailyTemperatures(self, T):
+            results=[0]*(len(T))
+            stack=[]
+            for i in xrange(len(T)-1, -1, -1):
+                while stack and T[i] >= stack[-1][0]:
+                    stack.pop()
+                if stack and stack[-1][0]>T[i]:
+                    results[i]=(stack[-1][1]-i)
+                stack.append((T[i],i))
+            return results
