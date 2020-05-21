@@ -4,16 +4,14 @@
 
 #### 31 - 700. Search in a Binary Search Tree - https://leetcode.com/problems/search-in-a-binary-search-tree/
     
-      def searchBST(self, root, val):
-        def search(root,val):
+       def searchBST(self, root, val):
             if root:
                 if root.val==val or root is None:
                     return root
                 elif root.val > val:
-                    return search(root.left, val)
+                    return self.searchBST(root.left, val)
                 elif root.val < val:
-                    return search(root.right, val)
-        return search(root,val)  
+                    return self.searchBST(root.right, val) 
 
 #### 701. Insert into a Binary Search Tree - https://leetcode.com/problems/insert-into-a-binary-search-tree/
 
