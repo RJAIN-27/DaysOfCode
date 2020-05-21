@@ -239,3 +239,35 @@ I never got a chance to understand the stack implementation of this question pro
                     results[i]=(stack[-1][1]-i)
                 stack.append((T[i],i))
             return results
+
+#### 19 - 139. Word Break - https://leetcode.com/problems/word-break/
+
+This is a dynamic programming question which is pretty simple to understand. 
+
+It becomes difficult to come up with the solution at the moment.
+
+The solution is:
+
+       def wordBreak(self, s, wordDict):
+           l=[]
+           for i in wordDict:
+               l.append(len(i))
+
+           ans=[False]*(len(s)+1)
+
+           ans[0]=True
+
+           for i in range(1,len(s)+1):
+               for j in l:
+                   if ans[i-j] and s[i-j:i] in wordDict:
+                       ans[i]=True
+                       break
+           print ans
+           return ans[-1]
+           
+We consider a final answer array in the above solution its name is arr.
+
+The size of this array is len(s)+1 where s is the string that is being inputted.
+
+Below is how it will be filled up in 2 different scenarios:
+
