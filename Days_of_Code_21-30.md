@@ -2,7 +2,7 @@
 
 ## I felt like doing some Tree questions to have a grasp.
 
-#### 31 - 700. Search in a Binary Search Tree - https://leetcode.com/problems/search-in-a-binary-search-tree/
+#### 21 - 700. Search in a Binary Search Tree - https://leetcode.com/problems/search-in-a-binary-search-tree/
     
        def searchBST(self, root, val):
             if root:
@@ -13,7 +13,7 @@
                 elif root.val < val:
                     return self.searchBST(root.right, val) 
 
-#### 701. Insert into a Binary Search Tree - https://leetcode.com/problems/insert-into-a-binary-search-tree/
+#### 22 - 701. Insert into a Binary Search Tree - https://leetcode.com/problems/insert-into-a-binary-search-tree/
 
         def insertIntoBST(self, root, val):
             if root is None:
@@ -24,7 +24,7 @@
                 root.left = self.insertIntoBST(root.left, val) 
             return root
 
-### 450. Delete Node in a BST - https://leetcode.com/problems/delete-node-in-a-bst/
+### 23 - 450. Delete Node in a BST - https://leetcode.com/problems/delete-node-in-a-bst/
     def successor(self, root):
         root = root.right
         while root.left:
@@ -55,3 +55,36 @@
                 root.left = self.deleteNode(root.left, root.val)        
         return root
 
+#### 24 - 1277. Count Square Submatrices with All Ones - https://leetcode.com/problems/count-square-submatrices-with-all-ones/
+
+    def countSquares(self, matrix):
+            
+            rows=len(matrix)
+            columns=len(matrix[0])
+            
+            result=0
+            
+            helper = [[0 for i in range(columns)] for j in range(rows)]
+            
+            for i in range(rows):
+                if matrix[i][0] == 1:
+                    helper[i][0] = matrix[i][0]
+
+            i=0
+            for i in range(columns):
+                if matrix[0][i] == 1:
+                    helper[0][i] = matrix[0][i]
+
+                            
+            for i in range(1, rows):
+                for j in range(1, columns):
+                    if matrix[i][j]==1:
+                        helper[i][j]=1+min(helper[i-1][j-1], helper[i-1][j], helper[i][j-1])
+
+            
+            for i in range(rows):
+                result=result+sum(helper[i])
+                
+            return result
+            
+        
