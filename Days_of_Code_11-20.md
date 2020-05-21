@@ -269,5 +269,6 @@ We consider a final answer array in the above solution its name is arr.
 
 The size of this array is len(s)+1 where s is the string that is being inputted.
 
-Below is how it will be filled up in 2 different scenarios:
+Below is how it will be filled up in 1 different scenarios:
 
+https://github.com/RJAIN-27/DaysOfCode/blob/master/IMG_7858.JPG
