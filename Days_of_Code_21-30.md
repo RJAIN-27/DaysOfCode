@@ -15,5 +15,13 @@
                     return search(root.right, val)
         return search(root,val)  
 
-#### Time complexity : \mathcal{O}(H)O(H), where HH is a tree height. That results in \mathcal{O}(\log N)O(logN) in the average case, and \mathcal{O}(N)O(N) in the worst case.
+#### 701. Insert into a Binary Search Tree - https://leetcode.com/problems/insert-into-a-binary-search-tree/
 
+        def insertIntoBST(self, root, val):
+            if root is None:
+                return TreeNode(val)
+            if root.val < val:
+                root.right = self.insertIntoBST(root.right, val)
+            else:
+                root.left = self.insertIntoBST(root.left, val) 
+            return root
