@@ -272,3 +272,17 @@ The size of this array is len(s)+1 where s is the string that is being inputted.
 Below is how it will be filled up in 1 different scenarios:
 
  >> https://github.com/RJAIN-27/DaysOfCode/blob/master/IMG_7858.JPG
+
+#### 19 - 230. Kth Smallest Element in a BST - https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+
+This question i realised that the  inorder traversal that is left root right is ascendiing order for a BST.
+
+    def kthSmallest(self, root, k):
+        ans=[]
+        def inorder(root,ans):
+            if root:
+                inorder(root.left,ans)
+                ans.append(root.val)
+                inorder(root.right,ans)
+        inorder(root,ans)
+        return ans[k-1]
