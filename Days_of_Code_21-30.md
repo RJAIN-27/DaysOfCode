@@ -1,7 +1,5 @@
 # DaysOfCode
 
-## I felt like doing some Tree questions to have a grasp.
-
 #### 21 - 700. Search in a Binary Search Tree - https://leetcode.com/problems/search-in-a-binary-search-tree/
     
        def searchBST(self, root, val):
