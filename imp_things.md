@@ -6,7 +6,7 @@ https://stackoverflow.com/questions/4233476/sort-a-list-by-multiple-attributes?n
 
 https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
 
-## 3. You always forget how to write function inside a function in python. Here is the syntax :
+## 3. You always forget how to write function inside a function in python. Here is the syntax:
 
         def kthSmallest(self, root, k):
             ans=[]
@@ -17,3 +17,7 @@ https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
                     inorder(root.right,ans)
             inorder(root,ans)
             return ans[k-1]
+           
+ ## Make dictionary from a list
+        para=[]
+        d=collections.Counter(para)
