@@ -161,3 +161,17 @@
             root=TreeNode(preorder[0])
             self.leftright(preorder, root)
             return root
+
+#### 322. Coin Change - https://leetcode.com/problems/coin-change/
+        
+        def coinChange(self, coins, amount):
+            dp=[float('inf')]*(amount+1)
+            dp[0]=0
+            for i in range(1,(amount+1)):
+                for j in coins:
+                    if i >= j:
+                        dp[i]=min(dp[i],dp[i-j]+1) 
+            if dp[-1]!=float('inf'):
+                return dp[-1]
+            else:
+                return -1
