@@ -85,4 +85,48 @@
                 
             return result
             
+#### 25 - https://leetcode.com/problems/interval-list-intersections/
+
+        def intervalIntersection(self, A, B):
+        
+            la=len(A)
+            lb=len(B)
+
+            i=0
+            j=0
+
+            s=0
+            e=0
+
+            ans=[]
+
+            while i < la and j < lb:
+
+                oa,ta=A[i]
+                ob,tb=B[j]
+
+                if tb<oa:
+                    j=j+1
+                    continue
+
+                if ta<ob:
+                    i=i+1
+                    continue
+
+                if oa>=ob:
+                    s=oa
+                else:
+                    s=ob
+
+                if ta<=tb:
+                    e=ta
+                    i=i+1
+                else:
+                    e=tb
+                    j=j+1
+
+                ans.append([s,e])
+
+            return ans
+            
         
