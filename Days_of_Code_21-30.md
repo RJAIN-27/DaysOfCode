@@ -130,3 +130,34 @@
             return ans
             
         
+#### 26 - 1008. Construct Binary Search Tree from Preorder Traversal - https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+
+    def leftright(self, preorder, root):
+            l=[]
+            r=[]
+            if not preorder:
+                return 
+            for i in range(1,len(preorder)):
+                if preorder[i]>=root.val:
+                    r.append(preorder[i])
+                else:
+                    l.append(preorder[i])
+            if l:
+                root.left=TreeNode(l[0])
+            else:
+                root.left=None
+            if r:
+                root.right=TreeNode(r[0])
+            else:
+                root.right=None
+
+            if l!=None:
+                self.leftright(l, root.left)
+            if r!=None:
+                self.leftright( r, root.right)
+            return 
+
+        def bstFromPreorder(self, preorder):
+            root=TreeNode(preorder[0])
+            self.leftright(preorder, root)
+            return root
