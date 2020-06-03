@@ -194,4 +194,23 @@
             node.next=node.next.next
         
 
-#### 30 - 
+#### 30 - https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+
+        def flatten(self, root): 
+        r=root
+        def flattenT(root):
+            if root==None:
+                return root
+            if root.left==None and root.right==None:
+                return root
+            left=flattenT(root.left)
+            right=flattenT(root.right)
+            if left:
+                left.right=root.right
+                root.right=root.left
+                root.left=None
+            if right:
+                return right
+            else:
+                return left
+        return flattenT(r)
