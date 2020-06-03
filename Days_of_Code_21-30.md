@@ -194,7 +194,7 @@
             node.next=node.next.next
         
 
-#### 30 - https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+#### 30 - Flatten the Binary Tree - https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 
         def flatten(self, root): 
         r=root
