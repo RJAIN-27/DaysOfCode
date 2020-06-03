@@ -175,3 +175,23 @@
                 return dp[-1]
             else:
                 return -1
+
+## 28 - Intvert the Binary Tree - https://leetcode.com/problems/invert-binary-tree/
+        def invertTree(self, root):
+            if root==None:
+                return root
+            temp=root.left
+            root.left=root.right
+            root.right=temp
+            self.invertTree(root.left)
+            self.invertTree(root.right)
+            return root
+            
+
+## 29 - Delete Node in a Linked List - https://leetcode.com/problems/delete-node-in-a-linked-list/
+        def deleteNode(self, node):
+            node.val=node.next.val
+            node.next=node.next.next
+        
+
+## 30 - 
