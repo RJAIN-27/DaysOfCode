@@ -22,7 +22,7 @@
                 root.left = self.insertIntoBST(root.left, val) 
             return root
 
-### 23 - 450. Delete Node in a BST - https://leetcode.com/problems/delete-node-in-a-bst/
+#### 23 - 450. Delete Node in a BST - https://leetcode.com/problems/delete-node-in-a-bst/
     def successor(self, root):
         root = root.right
         while root.left:
@@ -188,10 +188,10 @@
             return root
             
 
-## 29 - Delete Node in a Linked List - https://leetcode.com/problems/delete-node-in-a-linked-list/
+#### 29 - Delete Node in a Linked List - https://leetcode.com/problems/delete-node-in-a-linked-list/
         def deleteNode(self, node):
             node.val=node.next.val
             node.next=node.next.next
         
 
-## 30 - 
+#### 30 - 
